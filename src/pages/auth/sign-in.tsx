@@ -1,10 +1,33 @@
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { APP_NAME } from '@/config';
 
 export function SignIn() {
   return (
     <>
       <title>{`Login | ${APP_NAME}`}</title>
-      <h1>SignIn</h1>
+      <div className="p-8">
+        <div className="flex w-87.5 flex-col justify-center gap-6">
+          <div className="flex flex-col gap-2 text-center">
+            <h1 className="font-semibold text-2xl tracking-tight">
+              Acessar Painel
+            </h1>
+            <p className="text-muted-foreground text-sm">
+              Acompanhe suas vendas pelo painel do parceiro
+            </p>
+          </div>
+          <form className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="email">Seu e-mail</Label>
+              <Input id="email" type="email" />
+            </div>
+            <Button className="w-full" type="submit">
+              Acessar painel
+            </Button>
+          </form>
+        </div>
+      </div>
     </>
   );
 }
