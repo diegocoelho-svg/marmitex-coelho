@@ -3,6 +3,9 @@
   "extends": ["ultracite/biome/core", "ultracite/biome/react"],
   "linter": {
     "rules": {
+      "a11y": {
+        "useValidAnchor": "off"
+      },
       "correctness": {
         "noUnusedImports": {
           "level": "warn",

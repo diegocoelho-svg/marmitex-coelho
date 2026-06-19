@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
@@ -38,6 +39,9 @@ export function SignIn() {
     <>
       <title>{`Login | ${APP_NAME}`}</title>
       <div className="p-8">
+        <Button className="absolute top-8 right-8" variant="ghost">
+          <Link to="/sign-up">Novo estabelecimento</Link>
+        </Button>
         <div className="flex w-87.5 flex-col justify-center gap-6">
           <div className="flex flex-col gap-2 text-center">
             <h1 className="font-semibold text-2xl tracking-tight">
@@ -52,7 +56,11 @@ export function SignIn() {
               <Label htmlFor="email">Seu e-mail</Label>
               <Input id="email" type="email" {...register('email')} />
             </div>
-            <Button className="w-full" disabled={isSubmitting} type="submit">
+            <Button
+              className="w-full cursor-pointer"
+              disabled={isSubmitting}
+              type="submit"
+            >
               Acessar painel
             </Button>
           </form>
