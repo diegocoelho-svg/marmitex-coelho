@@ -1,6 +1,8 @@
 import { ChefHat, Home, UtensilsCrossed } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
+import { AccountMenu } from './account-menu';
 import { NavLink } from './nav-link';
+import { ThemeToggle } from './theme/theme-toggle';
 
 export function Header() {
   return (
@@ -17,9 +19,14 @@ export function Header() {
           </NavLink>
           <NavLink to="/orders">
             <UtensilsCrossed className="h-4 w-4" />
-            Início
+            Pedidos
           </NavLink>
         </nav>
+
+        <div className="ml-auto flex items-center gap-2">
+          <ThemeToggle />
+          <AccountMenu />
+        </div>
       </div>
     </div>
   );
